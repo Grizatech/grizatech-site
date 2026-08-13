@@ -86,31 +86,7 @@ reviewModal?.addEventListener('click', e => {
   if(e.target === reviewModal) closeReviewModal();
 });
 
-reviewForm?.addEventListener('submit', e => {
-  e.preventDefault();
-
-  const name = document.getElementById('reviewName').value.trim();
-  const service = document.getElementById('reviewService').value;
-  const comment = document.getElementById('reviewComment').value.trim();
-  const rating = document.querySelector('input[name="rating"]:checked')?.value || '5';
-
-  const stars = '★'.repeat(Number(rating)) + '☆'.repeat(5 - Number(rating));
-
-  const message =
-`Olá GrizaTech! Quero enviar uma avaliação do meu atendimento.
-
-Nome: ${name}
-Serviço: ${service}
-Nota: ${stars} (${rating}/5)
-
-Comentário:
-${comment}
-
-Autorizo o envio desta avaliação para análise da GrizaTech. A publicação no site fica sujeita à aprovação.`;
-
-  const url = 'https://api.whatsapp.com/send/?phone=5522997439359&text=' + encodeURIComponent(message);
-  window.open(url, '_blank', 'noopener');
-});
+// V10: o envio do formulário é tratado por firebase-feedback.js (Cloud Firestore).
 
 document.addEventListener('keydown', e => {
   if(e.key !== 'Escape') return;

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#02050b">
+<meta name="robots" content="noindex,nofollow">
+<title>GrizaTech | Painel de Avaliações</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<div class="admin-grid-bg"></div>
+<main class="admin-shell">
+  <header class="admin-header">
+    <div>
+      <span class="admin-eyebrow">GRIZATECH // ADMIN</span>
+      <h1>PAINEL DE <span>AVALIAÇÕES.</span></h1>
+    </div>
+    <a href="index.html">← VOLTAR AO SITE</a>
+  </header>
+
+  <section class="admin-login-card" id="loginPanel">
+    <div class="admin-card-head">
+      <div><small>ACESSO RESTRITO</small><strong>LOGIN DO PROPRIETÁRIO</strong></div>
+      <span class="status-dot"></span>
+    </div>
+    <form id="adminLoginForm">
+      <label>E-mail<input id="adminEmail" type="email" autocomplete="username" required></label>
+      <label>Senha<input id="adminPassword" type="password" autocomplete="current-password" required></label>
+      <button type="submit">ENTRAR NO PAINEL →</button>
+      <p id="loginStatus" class="admin-status"></p>
+    </form>
+  </section>
+
+  <section class="admin-dashboard" id="dashboardPanel" hidden>
+    <div class="admin-toolbar">
+      <div><small>SESSÃO ATIVA</small><strong id="adminIdentity">Administrador</strong></div>
+      <div class="admin-toolbar-actions">
+        <button id="refreshReviews" type="button">ATUALIZAR</button>
+        <button id="adminLogout" type="button">SAIR</button>
+      </div>
+    </div>
+
+    <div class="admin-summary">
+      <article><small>PENDENTES</small><strong id="pendingCount">0</strong></article>
+      <article><small>APROVADAS</small><strong id="approvedCount">0</strong></article>
+      <article><small>TOTAL</small><strong id="totalCount">0</strong></article>
+    </div>
+
+    <section class="admin-section">
+      <div class="admin-section-head"><div><small>MODERAÇÃO</small><h2>AVALIAÇÕES PENDENTES</h2></div><span>APROVAR OU EXCLUIR</span></div>
+      <div class="admin-review-list" id="pendingReviews"><div class="admin-empty">Carregando...</div></div>
+    </section>
+
+    <section class="admin-section">
+      <div class="admin-section-head"><div><small>PUBLICADAS</small><h2>AVALIAÇÕES APROVADAS</h2></div><span>OCULTAR OU EXCLUIR</span></div>
+      <div class="admin-review-list" id="approvedReviews"><div class="admin-empty">Carregando...</div></div>
+    </section>
+  </section>
+</main>
+<script type="module" src="admin.js"></script>
+</body>
+</html>

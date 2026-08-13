@@ -351,14 +351,13 @@
           <div class="rating-badge">★★★★★</div>
         </div>
 
-        <div class="review-empty-state">
-          <div class="review-quote">“</div>
-          <strong>ESPAÇO PREPARADO PARA OS PRIMEIROS FEEDBACKS</strong>
-          <p>
-            Assim que você aprovar uma avaliação real, ela poderá ser adicionada
-            aqui com nome, serviço realizado, nota e comentário.
-          </p>
-          <span>GRIZATECH // PROVA SOCIAL</span>
+        <div id="reviewsApprovedList">
+          <div class="review-empty-state">
+            <div class="review-quote">“</div>
+            <strong>ESPAÇO PREPARADO PARA OS PRIMEIROS FEEDBACKS</strong>
+            <p>Assim que uma avaliação real for aprovada pela GrizaTech, ela aparecerá automaticamente aqui.</p>
+            <span>GRIZATECH // PROVA SOCIAL</span>
+          </div>
         </div>
       </div>
 
@@ -463,8 +462,8 @@
     <h3>COMO FOI SEU <span>ATENDIMENTO?</span></h3>
 
     <p class="review-explain">
-      Esta avaliação será enviada para o WhatsApp da GrizaTech.
-      Ela não é publicada automaticamente: Fernando revisa e aprova antes de exibir no site.
+      Sua avaliação será enviada para análise da GrizaTech.
+      Ela não é publicada automaticamente: somente avaliações aprovadas aparecem no site.
     </p>
 
     <form id="reviewForm">
@@ -504,8 +503,9 @@
       </label>
 
       <button type="submit" class="review-submit">
-        ENVIAR AVALIAÇÃO PELO WHATSAPP →
+        ENVIAR AVALIAÇÃO →
       </button>
+      <p class="review-status" id="reviewStatus" aria-live="polite"></p>
     </form>
   </div>
 </div>
@@ -521,5 +521,6 @@
 </footer>
 
 <script src="script.js"></script>
+<script type="module" src="firebase-feedback.js"></script>
 </body>
 </html>

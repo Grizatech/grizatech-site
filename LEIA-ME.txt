@@ -1,14 +1,34 @@
-GRIZATECH SITE V9 — BASE OFICIAL
+GRIZATECH SITE V10 — FIREBASE FEEDBACK
 
-Esta versão preserva integralmente a estrutura HTML, CSS e JavaScript da V9 validada.
+BASE
+- Estrutura visual da V9 preservada.
+- HERO/topo aprovado preservado.
+- Assets oficiais preservados.
 
-ASSETS OFICIAIS DEFINIDOS:
-- assets/logo.png -> logomarca oficial GrizaTech
-- assets/fernando.png -> foto oficial do Fernando
-- assets/pc-gamer-detalhe.png -> imagem oficial do PC Gamer/setup
+MUDANÇAS SOMENTE NA ÁREA DE FEEDBACK
+1. Formulário agora envia para Cloud Firestore como status "pending".
+2. O site público consulta e exibe somente status "approved".
+3. Nova página admin.html para login do proprietário.
+4. Admin pode APROVAR, OCULTAR (volta para pending) ou EXCLUIR.
+5. Não há cadastro público de administrador.
+6. Não usa VPS, npm, Node ou Firebase Hosting. O site continua no GitHub Pages.
 
-IMPORTANTE:
-Nenhuma alteração estrutural foi feita para inserir essas imagens.
-Os arquivos foram apenas substituídos mantendo exatamente os nomes que o código já utiliza.
+ARQUIVOS NOVOS
+- firebase.js
+- firebase-feedback.js
+- admin.html
+- admin.css
+- admin.js
+- FIRESTORE-RULES.txt
 
-Os demais assets permanecem como estavam na base anterior e podem ser substituídos depois, individualmente, conforme solicitado.
+PUBLICAÇÃO
+Suba TODOS os arquivos desta versão ao mesmo repositório GitHub, substituindo index.html, style.css e script.js pelos novos e adicionando os arquivos novos. A pasta assets deve continuar junto.
+
+IMPORTANTE PARA O LOGIN ADMINISTRATIVO
+No Firebase Console, em Authentication > Configurações > Domínios autorizados, confirme que o domínio onde o site está publicado está autorizado. Para GitHub Pages, normalmente será grizatech.github.io. Quando usar domínio próprio, adicione também o domínio próprio.
+
+ACESSO ADMIN
+Depois da publicação, abra:
+https://grizatech.github.io/grizatech-site/admin.html
+
+A senha NÃO está no código. Ela permanece no Firebase Authentication.

@@ -964,3 +964,10 @@ footer{padding:27px 0;border-top:1px solid rgba(68,137,230,.18);background:#0103
     padding:24px 18px;
   }
 }
+
+
+/* ==========================================================
+   V10 — FIREBASE / FEEDBACK DINÂMICO
+   Alterações isoladas da área de avaliações.
+   ========================================================== */
+.review-status{min-height:18px;margin:2px 0 0;color:#71839b;font-size:.62rem;line-height:1.5}.review-status.sending{color:#70b7ff}.review-status.success{color:#55df8d}.review-status.error{color:#ff7e91}.review-submit:disabled{opacity:.52;cursor:not-allowed}#reviewsApprovedList{display:grid;gap:10px}.approved-review-card{padding:18px;border:1px solid rgba(76,143,234,.16);background:rgba(3,8,18,.48)}.approved-review-top{display:flex;justify-content:space-between;align-items:flex-start;gap:18px}.approved-review-top>div:first-child{display:flex;flex-direction:column}.approved-review-top strong{font-size:.82rem}.approved-review-top span{margin-top:4px;color:#7186a2;font-size:.59rem}.approved-review-stars{color:#ffc928;letter-spacing:2px;white-space:nowrap}.approved-review-card p{margin:14px 0 2px;color:#c2cedc;font-size:.78rem;line-height:1.65}.review-loading{min-height:120px;display:grid;place-items:center;border:1px dashed rgba(76,143,234,.14);color:#647b98;font-size:.58rem;letter-spacing:1px}.review-loading.error{color:#c37786}@media(max-width:580px){.approved-review-top{flex-direction:column}}
