@@ -207,10 +207,16 @@
       </div>
 
       <div class="real-pc-panel reveal">
-        <div class="real-pc-image">
-          <img src="assets/pc-gamer-detalhe.png" alt="PC Gamer e ambiente GrizaTech">
+        <div class="real-pc-image real-pc-video">
+          <video id="grizatechShowcaseVideo" autoplay muted loop playsinline preload="metadata" poster="assets/pc-gamer-detalhe.png" aria-label="Apresentação em vídeo da GrizaTech">
+            <source src="assets/videos/grizatech-loop.mp4" type="video/mp4">
+          </video>
           <div class="real-pc-vignette"></div>
-          <div class="pc-live-badge"><i></i> HARDWARE // LIVE</div>
+          <div class="pc-live-badge"><i></i> GRIZATECH // VIDEO</div>
+          <button class="video-sound-toggle" id="videoSoundToggle" type="button" aria-label="Ativar som do vídeo" aria-pressed="false">
+            <span class="video-sound-icon" aria-hidden="true">🔇</span>
+            <span class="video-sound-label">ATIVAR SOM</span>
+          </button>
           <div class="pc-photo-caption">
             <span>GRIZATECH // PC GAMER</span>
             <b>PERFORMANCE • ESTABILIDADE • CONTROLE</b>

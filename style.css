@@ -1253,3 +1253,45 @@ footer{padding:27px 0;border-top:1px solid rgba(68,137,230,.18);background:#0103
 .portfolio-meta time{color:#7186a2;font-size:.52rem;letter-spacing:.6px;white-space:nowrap}
 @media(max-width:900px){.portfolio-gallery-v12 .gallery-card{min-width:280px}.portfolio-gallery-v12 .gallery-image{height:205px}}
 @media(max-width:580px){.portfolio-gallery-v12 .gallery-card{min-width:82vw}.portfolio-gallery-v12 .gallery-image{height:220px}}
+
+/* V13 — VIDEO INSTITUCIONAL NO PAINEL PC GAMER */
+.real-pc-image video{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center;
+  background:#030814;
+}
+.video-sound-toggle{
+  position:absolute;
+  z-index:4;
+  right:14px;
+  bottom:15px;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  padding:8px 10px;
+  border:1px solid rgba(97,181,255,.38);
+  background:rgba(3,8,18,.86);
+  color:#d8e5f4;
+  font:inherit;
+  font-size:.53rem;
+  font-weight:800;
+  letter-spacing:.7px;
+  cursor:pointer;
+  backdrop-filter:blur(6px);
+  transition:.2s ease;
+}
+.video-sound-toggle:hover{
+  border-color:rgba(97,181,255,.75);
+  box-shadow:0 0 18px rgba(0,167,255,.18);
+}
+.video-sound-toggle.sound-on{
+  border-color:rgba(45,226,123,.55);
+}
+.video-sound-icon{font-size:.8rem;line-height:1}
+@media (max-width:560px){
+  .video-sound-toggle{right:10px;bottom:10px;padding:7px 8px}
+  .video-sound-label{display:none}
+}

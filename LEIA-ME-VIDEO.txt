@@ -1,0 +1,25 @@
+GRIZATECH SITE V13 — VIDEO
+
+O QUE MUDOU
+- A imagem do painel PC Gamer foi substituída pelo vídeo assets/videos/grizatech-loop.mp4.
+- O vídeo inicia automaticamente, mudo, em loop.
+- O visitante pode clicar em ATIVAR SOM / DESATIVAR SOM.
+- A imagem assets/pc-gamer-detalhe.png continua como poster/fallback enquanto o vídeo carrega.
+- Firebase, painel administrativo, feedbacks e portfólio da V12 foram preservados.
+
+VIDEO ATUAL
+- 1280x720 (16:9)
+- H.264 + AAC
+- aproximadamente 6 segundos
+- aproximadamente 1,6 MB
+
+COMO TROCAR O VIDEO FUTURAMENTE
+1. Prepare outro MP4, preferencialmente H.264 + AAC e 16:9.
+2. Renomeie para: grizatech-loop.mp4
+3. No GitHub abra: assets/videos/
+4. Substitua o arquivo grizatech-loop.mp4 pelo novo.
+5. Faça Commit changes.
+6. Aguarde o GitHub Pages publicar e use Ctrl+F5 no navegador.
+
+DICA
+Quanto menor o MP4, mais rápido o site abre. Para esse painel, tente manter o vídeo abaixo de aproximadamente 10-15 MB.

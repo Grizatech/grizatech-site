@@ -93,3 +93,33 @@ document.addEventListener('keydown', e => {
   if(lightbox?.classList.contains('open')) closeLightbox();
   if(reviewModal?.classList.contains('open')) closeReviewModal();
 });
+
+
+// ===========================
+// V13 — VIDEO GRIZATECH / SOM OPCIONAL
+// Autoplay começa mudo por compatibilidade com navegadores.
+// O áudio só é ativado após ação do visitante.
+// ===========================
+const showcaseVideo = document.getElementById('grizatechShowcaseVideo');
+const videoSoundToggle = document.getElementById('videoSoundToggle');
+
+if (showcaseVideo && videoSoundToggle) {
+  const soundIcon = videoSoundToggle.querySelector('.video-sound-icon');
+  const soundLabel = videoSoundToggle.querySelector('.video-sound-label');
+
+  showcaseVideo.muted = true;
+  showcaseVideo.play().catch(() => {});
+
+  videoSoundToggle.addEventListener('click', async () => {
+    showcaseVideo.muted = !showcaseVideo.muted;
+    if (!showcaseVideo.muted) {
+      try { await showcaseVideo.play(); } catch (_) {}
+    }
+    const soundOn = !showcaseVideo.muted;
+    videoSoundToggle.classList.toggle('sound-on', soundOn);
+    videoSoundToggle.setAttribute('aria-pressed', String(soundOn));
+    videoSoundToggle.setAttribute('aria-label', soundOn ? 'Desativar som do vídeo' : 'Ativar som do vídeo');
+    soundIcon.textContent = soundOn ? '🔊' : '🔇';
+    soundLabel.textContent = soundOn ? 'DESATIVAR SOM' : 'ATIVAR SOM';
+  });
+}
