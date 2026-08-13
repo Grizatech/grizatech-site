@@ -971,3 +971,251 @@ footer{padding:27px 0;border-top:1px solid rgba(68,137,230,.18);background:#0103
    Alterações isoladas da área de avaliações.
    ========================================================== */
 .review-status{min-height:18px;margin:2px 0 0;color:#71839b;font-size:.62rem;line-height:1.5}.review-status.sending{color:#70b7ff}.review-status.success{color:#55df8d}.review-status.error{color:#ff7e91}.review-submit:disabled{opacity:.52;cursor:not-allowed}#reviewsApprovedList{display:grid;gap:10px}.approved-review-card{padding:18px;border:1px solid rgba(76,143,234,.16);background:rgba(3,8,18,.48)}.approved-review-top{display:flex;justify-content:space-between;align-items:flex-start;gap:18px}.approved-review-top>div:first-child{display:flex;flex-direction:column}.approved-review-top strong{font-size:.82rem}.approved-review-top span{margin-top:4px;color:#7186a2;font-size:.59rem}.approved-review-stars{color:#ffc928;letter-spacing:2px;white-space:nowrap}.approved-review-card p{margin:14px 0 2px;color:#c2cedc;font-size:.78rem;line-height:1.65}.review-loading{min-height:120px;display:grid;place-items:center;border:1px dashed rgba(76,143,234,.14);color:#647b98;font-size:.58rem;letter-spacing:1px}.review-loading.error{color:#c37786}@media(max-width:580px){.approved-review-top{flex-direction:column}}
+
+
+/* ==========================================================
+   V11 — FEEDBACKS PÚBLICOS REFINADOS
+   Somente a seção de avaliações foi alterada.
+   ========================================================== */
+
+#reviewsApprovedList{
+  display:grid;
+  gap:10px;
+  margin-top:14px;
+  max-height:720px;
+  overflow-y:auto;
+  overflow-x:hidden;
+  padding-right:8px;
+  scrollbar-width:thin;
+  scrollbar-color:#266da5 rgba(2,7,16,.65);
+}
+
+#reviewsApprovedList::-webkit-scrollbar{width:8px}
+#reviewsApprovedList::-webkit-scrollbar-track{
+  background:rgba(2,7,16,.72);
+  border:1px solid rgba(75,143,235,.10);
+}
+#reviewsApprovedList::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg,#168fe0,#7547d8);
+  border-radius:10px;
+}
+
+.approved-review-card{
+  position:relative;
+  min-height:128px;
+  padding:15px 16px 12px 18px;
+  border:1px solid rgba(78,145,236,.20);
+  background:
+    radial-gradient(circle at 100% 0,rgba(145,52,255,.055),transparent 34%),
+    linear-gradient(145deg,rgba(7,16,31,.98),rgba(3,8,18,.98));
+  overflow:hidden;
+  transition:.22s ease;
+}
+
+.approved-review-card:hover{
+  border-color:rgba(83,164,255,.36);
+  transform:translateY(-1px);
+  box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+
+.approved-review-accent{
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:2px;
+  background:linear-gradient(180deg,var(--blue),var(--purple));
+  box-shadow:0 0 14px rgba(78,102,255,.35);
+}
+
+.approved-review-header{
+  display:grid;
+  grid-template-columns:42px minmax(0,1fr) auto;
+  align-items:center;
+  gap:11px;
+}
+
+.approved-review-avatar{
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(81,151,242,.32);
+  background:linear-gradient(145deg,rgba(0,201,255,.08),rgba(157,60,255,.10));
+  color:#a9d8ff;
+  font-size:.66rem;
+  font-weight:900;
+  letter-spacing:.7px;
+  clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);
+}
+
+.approved-review-identity{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+}
+
+.approved-review-identity>strong{
+  color:#f0f6ff;
+  font-size:.78rem;
+  line-height:1.2;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.approved-review-meta{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:5px;
+}
+
+.approved-review-service,
+.approved-review-date{
+  display:inline-flex;
+  align-items:center;
+  min-height:20px;
+  padding:4px 7px;
+  border:1px solid rgba(76,143,234,.15);
+  background:rgba(4,10,22,.76);
+  color:#7791b0;
+  font-size:.49rem;
+  letter-spacing:.55px;
+  text-transform:uppercase;
+}
+
+.approved-review-service{
+  color:#62baff;
+  border-color:rgba(0,193,255,.18);
+}
+
+.approved-review-date:before{
+  content:'◷';
+  margin-right:5px;
+  color:#8668df;
+}
+
+.approved-review-rating{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:3px;
+}
+
+.approved-review-stars{
+  color:#ffc928;
+  letter-spacing:2px;
+  font-size:.77rem;
+  white-space:nowrap;
+  text-shadow:0 0 12px rgba(255,201,40,.10);
+}
+
+.approved-review-rating small{
+  color:#61748e;
+  font-size:.47rem;
+  letter-spacing:.7px;
+}
+
+.approved-review-body{
+  position:relative;
+  display:grid;
+  grid-template-columns:22px 1fr;
+  gap:7px;
+  align-items:start;
+  margin-top:12px;
+  padding-top:10px;
+  border-top:1px solid rgba(72,139,231,.10);
+}
+
+.approved-review-quote{
+  color:#263f65;
+  font-family:Georgia,serif;
+  font-size:2rem;
+  line-height:.8;
+}
+
+.approved-review-body p{
+  margin:0;
+  color:#b7c3d3;
+  font-size:.70rem;
+  line-height:1.55;
+  word-break:break-word;
+}
+
+.approved-review-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:10px;
+}
+
+.approved-review-verified,
+.approved-review-index{
+  color:#526a88;
+  font-size:.43rem;
+  letter-spacing:1px;
+}
+
+.approved-review-verified{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  color:#678aa5;
+}
+
+.approved-review-verified i{
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:#2de17b;
+  box-shadow:0 0 9px rgba(45,225,123,.75);
+}
+
+.reviews-approved{
+  min-width:0;
+}
+
+@media(max-width:860px){
+  #reviewsApprovedList{
+    max-height:690px;
+  }
+}
+
+@media(max-width:580px){
+  #reviewsApprovedList{
+    max-height:650px;
+    padding-right:5px;
+  }
+
+  .approved-review-card{
+    padding:14px 12px 11px 14px;
+  }
+
+  .approved-review-header{
+    grid-template-columns:38px minmax(0,1fr);
+  }
+
+  .approved-review-avatar{
+    width:38px;
+    height:38px;
+  }
+
+  .approved-review-rating{
+    grid-column:2;
+    align-items:flex-start;
+    margin-top:2px;
+  }
+
+  .approved-review-meta{
+    gap:5px;
+  }
+
+  .approved-review-footer{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:5px;
+  }
+}

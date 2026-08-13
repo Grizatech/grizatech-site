@@ -32,3 +32,15 @@ Depois da publicação, abra:
 https://grizatech.github.io/grizatech-site/admin.html
 
 A senha NÃO está no código. Ela permanece no Firebase Authentication.
+
+
+V11 — MELHORIA DOS FEEDBACKS PÚBLICOS
+- Cards de avaliações redesenhados.
+- Data da avaliação exibida em cada card.
+- Serviço mostrado como etiqueta visual.
+- Nota em estrelas + valor numérico.
+- Indicador de avaliação aprovada.
+- Lista limitada visualmente a aproximadamente 5 avaliações por vez.
+- Avaliações adicionais acessíveis por barra de rolagem.
+- Texto antigo que citava envio pelo WhatsApp foi corrigido.
+- Firebase, painel administrativo e restante do site preservados.
