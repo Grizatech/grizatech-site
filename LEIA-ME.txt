@@ -1,0 +1,14 @@
+GRIZATECH SITE V9 — BASE OFICIAL
+
+Esta versão preserva integralmente a estrutura HTML, CSS e JavaScript da V9 validada.
+
+ASSETS OFICIAIS DEFINIDOS:
+- assets/logo.png -> logomarca oficial GrizaTech
+- assets/fernando.png -> foto oficial do Fernando
+- assets/pc-gamer-detalhe.png -> imagem oficial do PC Gamer/setup
+
+IMPORTANTE:
+Nenhuma alteração estrutural foi feita para inserir essas imagens.
+Os arquivos foram apenas substituídos mantendo exatamente os nomes que o código já utiliza.
+
+Os demais assets permanecem como estavam na base anterior e podem ser substituídos depois, individualmente, conforme solicitado.
