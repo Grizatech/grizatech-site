@@ -1219,3 +1219,37 @@ footer{padding:27px 0;border-top:1px solid rgba(68,137,230,.18);background:#0103
     gap:5px;
   }
 }
+
+/* ==========================================================
+   V12 — PORTFÓLIO MANUAL / GALERIA COM ROLAGEM
+   Mantém Firebase/feedback V11 intacto.
+   ========================================================== */
+.portfolio-scroll-shell{
+  width:100%;
+  overflow-x:auto;
+  overflow-y:hidden;
+  padding:0 0 12px;
+  scrollbar-width:thin;
+  scrollbar-color:#2879b6 rgba(2,7,16,.72);
+}
+.portfolio-scroll-shell::-webkit-scrollbar{height:9px}
+.portfolio-scroll-shell::-webkit-scrollbar-track{background:rgba(2,7,16,.72);border:1px solid rgba(75,143,235,.10)}
+.portfolio-scroll-shell::-webkit-scrollbar-thumb{background:linear-gradient(90deg,#168fe0,#7547d8);border-radius:10px}
+.portfolio-gallery-v12{
+  display:flex;
+  gap:14px;
+  width:max-content;
+  min-width:100%;
+}
+.portfolio-gallery-v12 .gallery-card{
+  width:calc((min(1400px, 100vw - 48px) - 56px)/5);
+  min-width:245px;
+  max-width:310px;
+  flex:0 0 auto;
+}
+.portfolio-gallery-v12 .gallery-image{height:190px}
+.portfolio-gallery-v12 .gallery-copy{min-height:112px}
+.portfolio-meta{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.portfolio-meta time{color:#7186a2;font-size:.52rem;letter-spacing:.6px;white-space:nowrap}
+@media(max-width:900px){.portfolio-gallery-v12 .gallery-card{min-width:280px}.portfolio-gallery-v12 .gallery-image{height:205px}}
+@media(max-width:580px){.portfolio-gallery-v12 .gallery-card{min-width:82vw}.portfolio-gallery-v12 .gallery-image{height:220px}}

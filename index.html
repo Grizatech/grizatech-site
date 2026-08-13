@@ -280,50 +280,13 @@
     <div class="portfolio-head reveal">
       <div>
         <strong>GALERIA GRIZATECH</strong>
-        <span>Clique em uma imagem para visualizar em tamanho maior.</span>
+        <span>Montagens reais dos clientes. Clique para ampliar e role para ver mais.</span>
       </div>
-      <div class="portfolio-counter"><b>02</b><span>ITENS INICIAIS</span></div>
+      <div class="portfolio-counter"><b id="portfolioCount">00</b><span>TRABALHOS</span></div>
     </div>
 
-    <div class="portfolio-gallery">
-
-      <button class="gallery-card reveal"
-              data-lightbox="assets/pc-gamer-detalhe.png"
-              data-caption="PC Gamer // Detalhe do ambiente GrizaTech">
-        <div class="gallery-image">
-          <img src="assets/pc-gamer-detalhe.png" alt="PC Gamer">
-          <span class="gallery-zoom">AMPLIAR +</span>
-        </div>
-        <div class="gallery-copy">
-          <small>PC GAMER</small>
-          <strong>HARDWARE & PERFORMANCE</strong>
-          <span>Área pronta para receber suas montagens reais.</span>
-        </div>
-      </button>
-
-      <button class="gallery-card reveal"
-              data-lightbox="assets/workspace-portfolio.png"
-              data-caption="Ambiente visual GrizaTech">
-        <div class="gallery-image">
-          <img src="assets/workspace-portfolio.png" alt="Ambiente GrizaTech">
-          <span class="gallery-zoom">AMPLIAR +</span>
-        </div>
-        <div class="gallery-copy">
-          <small>AMBIENTE</small>
-          <strong>GRIZATECH PERFORMANCE LAB</strong>
-          <span>Espaço visual para processo, bancada e conteúdo.</span>
-        </div>
-      </button>
-
-      <div class="gallery-card gallery-empty reveal">
-        <div class="empty-plus">+</div>
-        <div class="gallery-copy">
-          <small>PRÓXIMO TRABALHO</small>
-          <strong>ADICIONAR NOVA FOTO</strong>
-          <span>Quando você me enviar novas fotos, elas entram aqui.</span>
-        </div>
-      </div>
-
+    <div class="portfolio-scroll-shell reveal">
+      <div class="portfolio-gallery portfolio-gallery-v12" id="portfolioGallery" aria-label="Galeria de trabalhos GrizaTech"></div>
     </div>
 
     <div class="reviews-layout">
@@ -520,6 +483,7 @@
   </div>
 </footer>
 
+<script src="portfolio.js"></script>
 <script src="script.js"></script>
 <script type="module" src="firebase-feedback.js"></script>
 </body>

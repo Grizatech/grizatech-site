@@ -36,14 +36,14 @@ const lightboxImage = document.getElementById('lightboxImage');
 const lightboxCaption = document.getElementById('lightboxCaption');
 const lightboxClose = document.querySelector('.lightbox-close');
 
-document.querySelectorAll('[data-lightbox]').forEach(card => {
-  card.addEventListener('click', () => {
-    lightboxImage.src = card.dataset.lightbox;
-    lightboxCaption.textContent = card.dataset.caption || '';
-    lightbox.classList.add('open');
-    lightbox.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  });
+document.addEventListener('click', e => {
+  const card = e.target.closest('[data-lightbox]');
+  if(!card) return;
+  lightboxImage.src = card.dataset.lightbox;
+  lightboxCaption.textContent = card.dataset.caption || '';
+  lightbox.classList.add('open');
+  lightbox.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
 });
 
 function closeLightbox(){

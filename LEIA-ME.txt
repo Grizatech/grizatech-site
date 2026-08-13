@@ -44,3 +44,9 @@ V11 — MELHORIA DOS FEEDBACKS PÚBLICOS
 - Avaliações adicionais acessíveis por barra de rolagem.
 - Texto antigo que citava envio pelo WhatsApp foi corrigido.
 - Firebase, painel administrativo e restante do site preservados.
+
+V12 — PORTFÓLIO MANUAL
+- Adicionado portfolio.js para controlar a galeria sem editar o HTML principal.
+- Adicionada pasta assets/portfolio com 5 moldes JPG 1600x900.
+- Galeria horizontal com rolagem e contador automático.
+- Consulte LEIA-ME-PORTFOLIO.txt para manutenção.
