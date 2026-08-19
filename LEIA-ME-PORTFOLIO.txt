@@ -1,43 +1,31 @@
-GRIZATECH SITE V12 — GUIA RÁPIDO DO PORTFÓLIO
+GRIZATECH SITE V14 — COMO ADICIONAR FOTOS AO PORTFÓLIO
+========================================================
 
-O QUE FOI CRIADO
-- Pasta: assets/portfolio/
-- 5 JPGs de demonstração: cliente-01.jpg até cliente-05.jpg
-- Tamanho padrão das fotos: 1600 x 900 px (16:9)
-- Arquivo de controle: portfolio.js
-- Galeria horizontal com até 5 cards na área de desktop e barra de rolagem para os próximos.
-- Clique na foto continua abrindo a imagem ampliada.
-- Cada card tem categoria, título, descrição e data.
-- O contador de trabalhos é automático.
-- Firebase e painel de feedback NÃO foram alterados.
+1. Prepare a nova imagem em JPG, de preferência com 1600 x 900 px.
+2. Use o próximo nome no formato cliente-XX.jpg.
+   Exemplos: cliente-06.jpg, cliente-07.jpg, cliente-08.jpg.
+3. Envie o arquivo para assets/portfolio/ no GitHub.
+4. Faça o commit e aguarde a atualização do GitHub Pages.
 
-COMO TROCAR UMA FOTO DE DEMONSTRAÇÃO
-1. Abra sua foto real no Photoshop.
-2. Recorte/redimensione para 1600 x 900 px.
-3. Salve em JPG (qualidade aproximada 80–90%).
-4. Use o mesmo nome, por exemplo cliente-01.jpg.
-5. Substitua o arquivo em assets/portfolio/ no GitHub.
-6. Edite no portfolio.js o título, descrição, categoria e data do cliente-01.
-7. Commit. O GitHub Pages atualiza o site.
+Pronto. Não é necessário editar portfolio.js, index.html ou qualquer outro arquivo.
 
-COMO ADICIONAR O SEXTO TRABALHO
-1. Crie assets/portfolio/cliente-06.jpg em 1600 x 900 px.
-2. Abra portfolio.js.
-3. Copie o último bloco { ... }.
-4. Cole abaixo, mantendo uma vírgula entre os blocos.
-5. Troque para cliente-06.jpg e altere os textos/data.
-6. Commit.
-7. O contador passa automaticamente para 06 e a barra de rolagem permite chegar ao novo card.
+A galeria procura automaticamente cliente-01.jpg até cliente-99.jpg, ignora
+números ausentes, atualiza o contador e mostra todos os arquivos encontrados.
+Os cinco primeiros cards ficam no destaque visível; os demais ficam na mesma
+galeria e podem ser acessados pela barra de rolagem horizontal.
 
-EXEMPLO DE BLOCO
-{
-  image: "assets/portfolio/cliente-06.jpg",
-  category: "PC GAMER",
-  title: "RYZEN 7 + RTX 5070",
-  description: "Montagem completa, organização e configuração.",
-  date: "13/08/2026"
-}
+A ordem permanece estável por dois dias. Na janela seguinte, ela muda de forma
+determinística para alternar os trabalhos entre destaque e rolagem.
 
-DICA
-Evite espaços, acentos e caracteres especiais no nome do arquivo JPG.
-Prefira: cliente-06.jpg, rtx5070-joao.jpg, montagem-ryzen7.jpg.
+Cada card recebe automaticamente:
+- MONTAGEM CLIENTE XX
+- Trabalho realizado pela GrizaTech.
+
+Ao clicar em AMPLIAR +, o lightbox continua abrindo a imagem em tamanho maior.
+
+IMPORTANTE
+----------
+- Use somente JPG com o nome exato cliente-XX.jpg.
+- Use números de 01 a 99.
+- Letras minúsculas e hífen fazem parte do padrão.
+- Não altere os arquivos de Firebase, feedbacks, admin ou vídeo para adicionar fotos.

@@ -1221,8 +1221,8 @@ footer{padding:27px 0;border-top:1px solid rgba(68,137,230,.18);background:#0103
 }
 
 /* ==========================================================
-   V12 — PORTFÓLIO MANUAL / GALERIA COM ROLAGEM
-   Mantém Firebase/feedback V11 intacto.
+   V14 — PORTFÓLIO AUTOMÁTICO / GALERIA COM ROLAGEM
+   Mantém as demais áreas do site intactas.
    ========================================================== */
 .portfolio-scroll-shell{
   width:100%;
@@ -1250,7 +1250,8 @@ footer{padding:27px 0;border-top:1px solid rgba(68,137,230,.18);background:#0103
 .portfolio-gallery-v12 .gallery-image{height:190px}
 .portfolio-gallery-v12 .gallery-copy{min-height:112px}
 .portfolio-meta{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.portfolio-meta time{color:#7186a2;font-size:.52rem;letter-spacing:.6px;white-space:nowrap}
+.portfolio-meta>span{color:#7186a2;font-size:.52rem;letter-spacing:.6px;white-space:nowrap}
+.gallery-loading{width:min(1400px,calc(100vw - 48px));min-height:302px;display:grid;place-items:center;color:#7186a2;border:1px solid rgba(75,143,235,.12);background:rgba(4,10,22,.42);font-size:.68rem;letter-spacing:1.4px}
 @media(max-width:900px){.portfolio-gallery-v12 .gallery-card{min-width:280px}.portfolio-gallery-v12 .gallery-image{height:205px}}
 @media(max-width:580px){.portfolio-gallery-v12 .gallery-card{min-width:82vw}.portfolio-gallery-v12 .gallery-image{height:220px}}
 
