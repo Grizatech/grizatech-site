@@ -1,4 +1,4 @@
-GRIZATECH SITE V14 — COMO ADICIONAR FOTOS AO PORTFÓLIO
+GRIZATECH SITE V15 — COMO ADICIONAR FOTOS AO PORTFÓLIO
 ========================================================
 
 1. Prepare a nova imagem em JPG, de preferência com 1600 x 900 px.

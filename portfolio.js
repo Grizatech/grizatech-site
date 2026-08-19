@@ -1,4 +1,4 @@
-/* GRIZATECH V14 — PORTFÓLIO AUTOMÁTICO (cliente-01.jpg até cliente-99.jpg) */
+/* GRIZATECH V15 — PORTFÓLIO AUTOMÁTICO (cliente-01.jpg até cliente-99.jpg) */
 (function renderAutomaticPortfolio(){
   const gallery = document.getElementById('portfolioGallery');
   const counter = document.getElementById('portfolioCount');
