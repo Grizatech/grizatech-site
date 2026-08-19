@@ -17,8 +17,7 @@ galeria e podem ser acessados pela barra de rolagem horizontal.
 A ordem permanece estável por dois dias. Na janela seguinte, ela muda de forma
 determinística para alternar os trabalhos entre destaque e rolagem.
 
-Cada card recebe automaticamente:
-- MONTAGEM CLIENTE XX
+Cada card recebe automaticamente somente o texto:
 - Trabalho realizado pela GrizaTech.
 
 Ao clicar em AMPLIAR +, o lightbox continua abrindo a imagem em tamanho maior.

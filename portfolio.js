@@ -70,12 +70,12 @@
       return;
     }
     gallery.innerHTML = createFairTwoDayOrder(items).map((item, index) => {
-      const title = `MONTAGEM CLIENTE ${item.clientNumber}`;
+      const title = 'Trabalho realizado pela GrizaTech.';
       const featuredLabel = index < FEATURED_CARD_COUNT ? 'DESTAQUE' : 'PORTFÓLIO';
       return `
         <button class="gallery-card portfolio-item" type="button"
                 data-lightbox="${item.image}"
-                data-caption="${title} // Trabalho realizado pela GrizaTech.">
+                data-caption="${title}">
           <div class="gallery-image">
             <img src="${item.image}" alt="${title}" loading="lazy">
             <span class="gallery-zoom">AMPLIAR +</span>
@@ -83,7 +83,6 @@
           <div class="gallery-copy">
             <div class="portfolio-meta"><small>TRABALHO REAL</small><span>${featuredLabel}</span></div>
             <strong>${title}</strong>
-            <span>Trabalho realizado pela GrizaTech.</span>
           </div>
         </button>`;
     }).join('');
