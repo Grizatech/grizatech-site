@@ -2,9 +2,9 @@
 const menuBtn = document.querySelector('.menu-btn');
 const nav = document.querySelector('.navlinks');
 
-menuBtn.addEventListener('click', () => nav.classList.toggle('open'));
+menuBtn.addEventListener('click', () => { const open = nav.classList.toggle('open'); menuBtn.setAttribute('aria-expanded', String(open)); menuBtn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu'); });
 document.querySelectorAll('.navlinks a').forEach(a => {
-  a.addEventListener('click', () => nav.classList.remove('open'));
+  a.addEventListener('click', () => { nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); menuBtn.setAttribute('aria-label','Abrir menu'); });
 });
 
 const reveal = new IntersectionObserver(entries => {
@@ -123,3 +123,36 @@ if (showcaseVideo && videoSoundToggle) {
     soundLabel.textContent = soundOn ? 'DESATIVAR SOM' : 'ATIVAR SOM';
   });
 }
+
+// Dimensiona a janela da galeria por duas fileiras completas, sem cortar a próxima.
+(() => {
+  const viewport = document.querySelector('.portfolio-scroll-shell');
+  const grid = document.getElementById('portfolioGallery');
+  if (!viewport || !grid) return;
+  let frame;
+  const measure = () => {
+    cancelAnimationFrame(frame);
+    frame = requestAnimationFrame(() => {
+      const cards = [...grid.querySelectorAll('.gallery-card')];
+      if (!cards.length) return;
+      const gridStyle = getComputedStyle(grid);
+      const columns = gridStyle.gridTemplateColumns.split(' ').length;
+      if (columns < 2) { viewport.style.removeProperty('--gallery-two-rows'); return; }
+      const first = cards[0];
+      const secondRow = cards[columns];
+      const last = cards[Math.min(columns * 2, cards.length) - 1];
+      const style = getComputedStyle(viewport);
+      const contentHeight = secondRow
+        ? Math.max(...cards.slice(columns, columns * 2).map(card => card.offsetTop + card.offsetHeight)) - first.offsetTop
+        : last.offsetTop + last.offsetHeight - first.offsetTop;
+      const height = Math.ceil(contentHeight + parseFloat(style.paddingTop) + parseFloat(style.paddingBottom) + parseFloat(style.borderTopWidth) + parseFloat(style.borderBottomWidth));
+      viewport.style.setProperty('--gallery-two-rows', height + 'px');
+    });
+  };
+  new MutationObserver(measure).observe(grid, { childList: true });
+  new ResizeObserver(measure).observe(grid);
+  window.addEventListener('resize', measure);
+  grid.addEventListener('load', measure, true);
+  document.fonts?.ready.then(measure);
+  measure();
+})();
