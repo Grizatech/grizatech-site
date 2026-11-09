@@ -156,3 +156,13 @@ if (showcaseVideo && videoSoundToggle) {
   document.fonts?.ready.then(measure);
   measure();
 })();
+
+// Um resumo de apresentação aberto por vez, independente do catálogo de preços.
+document.querySelectorAll('.service-overview').forEach(detail => {
+  detail.addEventListener('toggle', () => {
+    if (!detail.open) return;
+    document.querySelectorAll('.service-overview').forEach(other => {
+      if (other !== detail) other.open = false;
+    });
+  });
+});
