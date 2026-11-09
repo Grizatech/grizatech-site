@@ -1,0 +1,259 @@
+{
+  "preview": false,
+  "currency": "BRL",
+  "whatsapp": "5522997439359",
+  "remoteTool": "N10",
+  "pricingNotice": "Valores de referência. O orçamento pode variar conforme atendimento remoto ou presencial, complexidade e necessidade do equipamento. Confirme as condições antes da execução.",
+  "services": [
+    {
+      "id": "formatacao",
+      "name": "Formatação + Configuração",
+      "price": 180,
+      "group": "principal",
+      "modality": "Presencial ou remoto",
+      "benefit": "Uma instalação limpa, com o computador preparado para o seu uso.",
+      "summary": "Reinstalação do Windows, drivers e configuração inicial. O atendimento remoto é avaliado antes do serviço, pois algumas etapas podem exigir sua participação no computador ou atendimento presencial. Combinamos previamente a preservação dos arquivos e os programas necessários.",
+      "includes": [
+        "Avaliação do atendimento",
+        "Planejamento dos arquivos",
+        "Sistema, drivers e configuração"
+      ],
+      "condition": "Valores de referência. O orçamento pode variar conforme atendimento remoto ou presencial, complexidade e necessidade do equipamento. Confirme as condições antes da execução.",
+      "modalities": [
+        "Presencial",
+        "Remoto"
+      ]
+    },
+    {
+      "id": "otimizacao",
+      "name": "Otimização de Sistema",
+      "price": 100,
+      "group": "principal",
+      "modality": "Presencial ou remoto",
+      "benefit": "Ajustes para aproveitar melhor o computador que você já tem.",
+      "summary": "Atendimento principalmente remoto, via N10, para revisar Windows, drivers, programas de inicialização e configurações de uso. Os ajustes são definidos para a sua máquina e para o que você precisa fazer, respeitando os limites do equipamento.",
+      "includes": [
+        "Análise do sistema",
+        "Ajustes personalizados",
+        "Verificação dos resultados"
+      ],
+      "condition": "Valores de referência. O orçamento pode variar conforme atendimento remoto ou presencial, complexidade e necessidade do equipamento. Confirme as condições antes da execução.",
+      "modalities": [
+        "Presencial",
+        "Remoto"
+      ]
+    },
+    {
+      "id": "bios",
+      "name": "Configuração e atualização de BIOS",
+      "price": 80,
+      "group": "principal",
+      "modality": "Presencial ou remoto",
+      "benefit": "Placa-mãe e memória configuradas de acordo com o equipamento.",
+      "summary": "Análise da compatibilidade e das configurações de BIOS. A orientação e parte dos ajustes podem ser acompanhadas remotamente; a atualização depende do modelo, das condições do equipamento e de etapas locais. Se houver necessidade de intervenção física, o atendimento presencial será combinado.",
+      "includes": [
+        "Verificação do modelo",
+        "Análise das configurações",
+        "Atualização quando indicada"
+      ],
+      "condition": "Valores de referência. O orçamento pode variar conforme atendimento remoto ou presencial, complexidade e necessidade do equipamento. Confirme as condições antes da execução.",
+      "modalities": [
+        "Presencial",
+        "Remoto"
+      ]
+    },
+    {
+      "id": "manutencao",
+      "name": "Limpeza e Manutenção Preventiva",
+      "price": 80,
+      "group": "principal",
+      "modality": "Presencial ou remoto",
+      "benefit": "Cuidado físico para manter seu computador em boas condições.",
+      "summary": "Limpeza interna e revisão preventiva do computador, com atenção à poeira e à ventilação. Presencialmente, a execução é feita na máquina; remotamente, o atendimento é de orientação, acompanhando quem realiza a limpeza e as etapas físicas no local. A viabilidade é avaliada antes. Para limpar arquivos e liberar espaço, selecione Limpeza de Armazenamentos.",
+      "includes": [
+        "Limpeza interna",
+        "Inspeção dos componentes",
+        "Revisão da ventilação"
+      ],
+      "condition": "Valores de referência. O orçamento pode variar conforme atendimento remoto ou presencial, complexidade e necessidade do equipamento. Confirme as condições antes da execução.",
+      "modalities": [
+        "Presencial",
+        "Remoto"
+      ]
+    },
+    {
+      "id": "diagnostico",
+      "name": "Diagnóstico de problemas",
+      "price": 60,
+      "group": "principal",
+      "modality": "Presencial ou remoto",
+      "benefit": "Entenda a causa do problema antes de decidir o que fazer.",
+      "summary": "A investigação começa preferencialmente por atendimento remoto, via N10, quando o computador permite conexão. Analisamos falhas do sistema e os sintomas relatados. Problemas ao ligar ou suspeitas de defeito físico podem exigir avaliação presencial.",
+      "includes": [
+        "Entendimento dos sintomas",
+        "Análise inicial",
+        "Orientação dos próximos passos"
+      ],
+      "condition": "Valores de referência. O orçamento pode variar conforme atendimento remoto ou presencial, complexidade e necessidade do equipamento. Confirme as condições antes da execução.",
+      "modalities": [
+        "Presencial",
+        "Remoto"
+      ]
+    },
+    {
+      "id": "consultoria",
+      "name": "Consultoria para Upgrades",
+      "price": 60,
+      "group": "principal",
+      "modality": "Presencial ou remoto",
+      "benefit": "Planeje a melhoria do seu computador antes de comprar peças.",
+      "summary": "Consultoria principalmente remota, via N10 e canais de atendimento, para analisar a configuração, o uso e o orçamento disponível. Você recebe orientação sobre compatibilidade e prioridades de upgrade. A compra e a instalação das peças não fazem parte desta consultoria.",
+      "includes": [
+        "Análise da configuração",
+        "Compatibilidade das peças",
+        "Prioridades por orçamento"
+      ],
+      "condition": "Valores de referência. O orçamento pode variar conforme atendimento remoto ou presencial, complexidade e necessidade do equipamento. Confirme as condições antes da execução.",
+      "modalities": [
+        "Presencial",
+        "Remoto"
+      ]
+    },
+    {
+      "id": "montagem",
+      "name": "Montagem de PC Gamer",
+      "price": 300,
+      "group": "outros",
+      "modality": "Presencial ou remoto",
+      "benefit": null,
+      "summary": "Montagem das peças, organização dos cabos e testes de funcionamento. Pode ser presencial ou com orientação remota, via N10, acompanhando quem realiza as etapas físicas no local. A modalidade, as condições e a viabilidade são combinadas antes do serviço.",
+      "includes": [],
+      "condition": "Valores de referência. O orçamento pode variar conforme atendimento remoto ou presencial, complexidade e necessidade do equipamento. Confirme as condições antes da execução.",
+      "modalities": [
+        "Presencial",
+        "Remoto"
+      ]
+    },
+    {
+      "id": "ssd-memoria",
+      "name": "Instalação de SSD e Memória",
+      "price": 70,
+      "group": "outros",
+      "modality": "Presencial ou remoto",
+      "benefit": null,
+      "summary": "Verificação de compatibilidade, instalação de SSD ou memória e conferência do funcionamento. Atendimento presencial ou remoto, via N10, com orientação para que você ou uma pessoa no local faça o manuseio das peças. Peças e migração de dados são combinadas à parte.",
+      "includes": [],
+      "condition": "Valores de referência. O orçamento pode variar conforme atendimento remoto ou presencial, complexidade e necessidade do equipamento. Confirme as condições antes da execução.",
+      "modalities": [
+        "Presencial",
+        "Remoto"
+      ]
+    },
+    {
+      "id": "armazenamento",
+      "name": "Limpeza de Armazenamentos",
+      "price": 60,
+      "group": "outros",
+      "modality": "Presencial ou remoto",
+      "benefit": null,
+      "summary": "Atendimento remoto, via N10, para analisar o espaço ocupado e remover arquivos temporários e itens dispensáveis com sua autorização. Seus arquivos pessoais são avaliados com você antes de qualquer exclusão. Este serviço não é limpeza física do computador.",
+      "includes": [],
+      "condition": "Valores de referência. O orçamento pode variar conforme atendimento remoto ou presencial, complexidade e necessidade do equipamento. Confirme as condições antes da execução.",
+      "modalities": [
+        "Presencial",
+        "Remoto"
+      ]
+    },
+    {
+      "id": "backup",
+      "name": "Backup e transferência de arquivos",
+      "price": 60,
+      "group": "outros",
+      "modality": "Presencial ou remoto",
+      "benefit": null,
+      "summary": "Cópia e transferência dos arquivos combinados. Pode ser acompanhada remotamente, via N10, quando as unidades estão conectadas e acessíveis. O volume de dados, a conexão e a necessidade de manusear unidades podem alterar prazo, modalidade e valor.",
+      "includes": [],
+      "condition": "Valores de referência. O orçamento pode variar conforme atendimento remoto ou presencial, complexidade e necessidade do equipamento. Confirme as condições antes da execução.",
+      "modalities": [
+        "Presencial",
+        "Remoto"
+      ]
+    },
+    {
+      "id": "perifericos",
+      "name": "Configuração de periféricos",
+      "price": 50,
+      "group": "outros",
+      "modality": "Presencial ou remoto",
+      "benefit": null,
+      "summary": "Configuração de impressora, headset, microfone, webcam e outros acessórios, preferencialmente por acesso remoto via N10. O cliente conecta os dispositivos. Problemas físicos ou instalações que exigem intervenção local são avaliados separadamente.",
+      "includes": [],
+      "condition": "Valores de referência. O orçamento pode variar conforme atendimento remoto ou presencial, complexidade e necessidade do equipamento. Confirme as condições antes da execução.",
+      "modalities": [
+        "Presencial",
+        "Remoto"
+      ]
+    },
+    {
+      "id": "suporte",
+      "name": "Suporte remoto",
+      "price": 50,
+      "group": "outros",
+      "modality": "Presencial ou remoto",
+      "benefit": null,
+      "summary": "Atendimento pela internet, via N10, para analisar e resolver dificuldades de programas e configurações. É necessário que o computador ligue e tenha conexão. O valor depende da demanda; serviços específicos e peças são orçados conforme a necessidade.",
+      "includes": [],
+      "condition": "Valores de referência. O orçamento pode variar conforme atendimento remoto ou presencial, complexidade e necessidade do equipamento. Confirme as condições antes da execução.",
+      "modalities": [
+        "Presencial",
+        "Remoto"
+      ]
+    },
+    {
+      "id": "programas",
+      "name": "Instalação de programas",
+      "price": 50,
+      "group": "outros",
+      "modality": "Presencial ou remoto",
+      "benefit": null,
+      "summary": "Instalação e configuração de programas por atendimento remoto, via N10, conforme a compatibilidade do computador. Os programas e o escopo são combinados antes do serviço. Licenças, assinaturas e compras de software não estão incluídas no valor.",
+      "includes": [],
+      "condition": "Valores de referência. O orçamento pode variar conforme atendimento remoto ou presencial, complexidade e necessidade do equipamento. Confirme as condições antes da execução.",
+      "modalities": [
+        "Presencial",
+        "Remoto"
+      ]
+    },
+    {
+      "id": "secureboot",
+      "name": "Secure Boot + TPM",
+      "price": 40,
+      "group": "outros",
+      "modality": "Presencial ou remoto",
+      "benefit": null,
+      "summary": "Verificação de compatibilidade e acompanhamento da configuração de Secure Boot e TPM. O processo pode exigir reinicialização e sua participação local na BIOS. A viabilidade do atendimento remoto é confirmada antes; não inclui a compra de módulos ou peças.",
+      "includes": [],
+      "condition": "Valores de referência. O orçamento pode variar conforme atendimento remoto ou presencial, complexidade e necessidade do equipamento. Confirme as condições antes da execução.",
+      "modalities": [
+        "Presencial",
+        "Remoto"
+      ]
+    },
+    {
+      "id": "jogos",
+      "name": "Configuração para jogos",
+      "price": 25,
+      "group": "outros",
+      "modality": "Presencial ou remoto",
+      "benefit": null,
+      "summary": "Atendimento remoto, via N10, para ajustar as configurações do jogo combinado e adequá-las à sua máquina e à sua preferência de qualidade e fluidez. A quantidade de jogos e a necessidade de outros ajustes podem alterar o orçamento.",
+      "includes": [],
+      "condition": "Valores de referência. O orçamento pode variar conforme atendimento remoto ou presencial, complexidade e necessidade do equipamento. Confirme as condições antes da execução.",
+      "modalities": [
+        "Presencial",
+        "Remoto"
+      ]
+    }
+  ],
+  "attendanceNotice": "Todos os serviços podem ser avaliados para atendimento presencial ou remoto. Quando houver manuseio físico, o remoto envolve orientação a quem executa as etapas no local. Modalidade e viabilidade confirmadas antes do serviço."
+}
