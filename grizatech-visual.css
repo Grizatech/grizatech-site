@@ -1,0 +1,183 @@
+@font-face {
+  font-family: "Rushblade";
+  src: url("rushblade-portugues.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 85%;
+}
+#inicio h1,
+#sobre .about-copy > h2,
+#servicos h2,
+#processo h2,
+#resultados h2,
+#precos .shop-title,
+#respeito-ao-trabalho h2,
+#contato h2 {
+  font-family: "Rushblade", "Arial Narrow", Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.012em;
+  line-height: 1.18;
+}
+
+
+.circuit-lights {
+  position: absolute;
+  z-index: 3;
+  inset: 0 0 auto;
+  height: 75px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero > .circuit-lights { top: 77px; height: 150px; }
+.circuit-light-paths {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  transform: translate(-50%, -45%);
+  overflow: visible;
+}
+.hero .circuit-light-paths {
+  top: 0;
+  width: max(100%, 1200px);
+  transform: translateX(-50%);
+}
+.circuit-beam {
+  fill: none;
+  stroke: #74fbff;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 15 85;
+  filter: drop-shadow(0 0 3px currentColor) drop-shadow(0 0 7px currentColor);
+  animation: trace-travel 4.2s linear infinite, trace-color 10s linear infinite;
+}
+.beam-1 { animation-delay: -1.4s, -3s; }
+.beam-2 { animation-delay: -2.9s, -6s; stroke-width: 2; }
+@keyframes trace-travel { from { stroke-dashoffset: 15; } to { stroke-dashoffset: -85; } }
+@keyframes trace-color {
+  0%, 100% { stroke: #86ffff; color: #2cefff; }
+  25% { stroke: #89baff; color: #2e79ff; }
+  50% { stroke: #d9a7ff; color: #bd58ff; }
+  75% { stroke: #d9ff8e; color: #aaff32; }
+}
+.reviews-info { display: block; }
+.featured-review {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin-top: 44px;
+  padding-top: 0;
+}
+.featured-review[hidden] { display: none; }
+.featured-review h4 {
+  color: #a7eef8;
+  margin: 0 0 12px;
+  font-size: .72rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.featured-review .approved-review-card {
+  border-color: #66b6ce6b;
+  background: linear-gradient(138deg, #263848, #121b2b 58%, #211833);
+  box-shadow: inset 0 1px #defaff28, 0 12px 30px #0004;
+}
+.featured-review .approved-review-accent {
+  background: var(--energy-spectrum);
+  background-size: 240% 100%;
+  animation: edge-flow 5s linear infinite;
+}
+.featured-review .approved-review-body p { overflow-wrap: anywhere; }
+@media (max-width: 760px) {
+  .circuit-lights { height: 40px; }
+  .hero > .circuit-lights { height: 75px; }
+  .circuit-light-paths, .hero .circuit-light-paths { width: 180%; }
+  .featured-review { margin-top: 30px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .circuit-lights { display: none; }
+}
+.preview-motion {
+  position: fixed;
+  right: 18px;
+  bottom: 110px;
+  z-index: 20;
+  padding: 8px 13px;
+  color: #b9f8ff;
+  background: #101d2b;
+  border: 1px solid #498b9b;
+  border-radius: 5px;
+  cursor: pointer;
+}
+html:not(.lights-preview-on) .circuit-lights { display: none; }
+html.lights-preview-on .circuit-lights { display: block; }
+html.lights-preview-on .circuit-beam {
+  animation: trace-travel 4.2s linear infinite, trace-color 10s linear infinite !important;
+}
+html.lights-preview-on .beam-1 { animation-delay: -1.4s, -3s !important; }
+html.lights-preview-on .beam-2 { animation-delay: -2.9s, -6s !important; }
+html.lights-preview-on .featured-review .approved-review-accent {
+  animation: edge-flow 5s linear infinite !important;
+}
+html.lights-preview-on .hardware-card:after,
+html.lights-preview-on .step:after,
+html.lights-preview-on .gallery-card:after,
+html.lights-preview-on .social-card:after {
+  animation: edge-flow 6s linear infinite !important;
+}
+@media(max-width:760px) { .preview-motion { bottom: 151px; right: 12px; } }
+
+/* Ajustes de alinhamento e divisores do catálogo. */
+#inicio .hero-copy::before { content: none; }
+#inicio .hero-signature {
+  position: relative;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
+  margin: 0 0 16px;
+  padding: 9px 13px;
+  border-left: 2px solid #61e8f1;
+  background: #0b1520;
+  color: #b9d5e3;
+  text-transform: uppercase;
+  font-size: clamp(.55rem, 1vw, .72rem);
+  line-height: 1.35;
+  letter-spacing: .16em;
+}
+.divider { position: relative; }
+.divider > .circuit-lights { height: 100%; }
+#precos .circuit-beam {
+  stroke-width: 4;
+  stroke-dasharray: 22 78;
+}
+html.lights-preview-on #precos .circuit-beam {
+  animation-name: catalog-trace-travel, trace-color !important;
+}
+@keyframes catalog-trace-travel {
+  from { stroke-dashoffset: 22; }
+  to { stroke-dashoffset: -78; }
+}
+.header .brand {
+  align-items: center;
+  gap: 12px;
+}
+.header .brand img {
+  flex: 0 0 auto;
+  display: block;
+  width: 54px;
+  height: 54px;
+  padding: 4px;
+  object-fit: contain;
+  border-radius: 9px;
+  border: 1px solid #8cd7f039;
+  background: linear-gradient(140deg, #243546, #0d1623);
+}
+@media (max-width: 760px) {
+  .header .brand img { width: 46px; height: 46px; padding: 3px; }
+  .header .brand { gap: 9px; }
+}
+

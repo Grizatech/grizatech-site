@@ -12,6 +12,7 @@ import {
 const reviewForm = document.getElementById('reviewForm');
 const reviewModal = document.getElementById('reviewModal');
 const reviewsList = document.getElementById('reviewsApprovedList');
+const featuredReview = document.getElementById('featuredReview');
 const submitButton = reviewForm?.querySelector('.review-submit');
 const reviewStatus = document.getElementById('reviewStatus');
 
@@ -163,7 +164,17 @@ async function loadApprovedReviews() {
       return;
     }
 
-    reviews.forEach((review, index) => reviewsList.appendChild(createReviewCard(review, index + 1)));
+    const highlight = reviews.find(review => typeof review.comment === 'string' && review.comment.trim());
+    if (featuredReview && highlight) {
+      const label = document.createElement('h4');
+      label.textContent = 'Depoimento em destaque';
+      const card = createReviewCard(highlight, 1);
+      card.querySelector('.approved-review-index')?.remove();
+      featuredReview.replaceChildren(label, card);
+      featuredReview.hidden = false;
+    }
+    const moreReviews = featuredReview && highlight && reviews.length > 1 ? reviews.filter(review => review !== highlight) : reviews;
+    moreReviews.forEach((review, index) => reviewsList.appendChild(createReviewCard(review, index + 1)));
   } catch (error) {
     console.error('Erro ao carregar avaliações:', error);
     reviewsList.innerHTML = '<div class="review-loading error">Não foi possível carregar as avaliações agora.</div>';
@@ -214,3 +225,4 @@ reviewForm?.addEventListener('submit', async (event) => {
 });
 
 loadApprovedReviews();
+
