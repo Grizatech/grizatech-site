@@ -1,3 +1,4 @@
+import { discoverGallery, loadGalleryNames, saveGalleryName } from './gallery-data.js?v=20261110';
 import { auth, db } from './firebase.js';
 import {
   onAuthStateChanged,
@@ -183,4 +184,99 @@ onAuthStateChanged(auth, async (user) => {
   adminIdentity.textContent = user.email || 'Administrador GrizaTech';
   setLoginStatus('');
   await loadReviews();
+});
+
+const galleryPanel = document.getElementById('galleryPanel');
+const galleryList = document.getElementById('adminGallery');
+const galleryStatus = document.getElementById('galleryStatus');
+const refreshGallery = document.getElementById('refreshGallery');
+let galleryLoaded = false;
+
+async function loadAdminGallery() {
+  refreshGallery.disabled = true;
+  galleryStatus.textContent = 'Carregando fotos e nomes...';
+  galleryStatus.className = 'admin-status';
+  try {
+    const [photos, names] = await Promise.all([discoverGallery(), loadGalleryNames()]);
+    if (auth.currentUser?.uid !== ADMIN_UID) return;
+    galleryList.replaceChildren();
+    for (const photo of photos) {
+      const card = document.createElement('form');
+      card.className = 'admin-machine';
+      const image = document.createElement('img');
+      image.src = photo.image;
+      image.alt = 'Máquina da foto ' + photo.id;
+      image.loading = 'lazy';
+      const filename = document.createElement('small');
+      filename.textContent = 'cliente-' + photo.id + '.jpg';
+      const label = document.createElement('label');
+      label.textContent = 'Nome ou apelido do dono';
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.maxLength = 60;
+      input.value = names.get(photo.id) || '';
+      input.placeholder = 'Ex.: Rafael M.';
+      const preview = document.createElement('strong');
+      preview.className = 'gallery-owner-preview';
+      const updatePreview = () => { preview.textContent = input.value.trim() || 'Trabalho realizado pela GrizaTech.'; };
+      input.addEventListener('input', updatePreview);
+      updatePreview();
+      label.append(input);
+      const save = document.createElement('button');
+      save.type = 'submit';
+      save.textContent = 'Salvar nome';
+      const status = document.createElement('p');
+      status.className = 'admin-status';
+      status.setAttribute('role', 'status');
+      card.addEventListener('submit', async event => {
+        event.preventDefault();
+        save.disabled = true;
+        input.disabled = true;
+        status.textContent = 'Salvando...';
+        status.className = 'admin-status';
+        try {
+          input.value = await saveGalleryName(photo.id, input.value);
+          updatePreview();
+          status.textContent = 'Salvo. O nome já está disponível na galeria.';
+        } catch (error) {
+          console.error(error);
+          status.textContent = 'Falha ao salvar. Confira sua conexão e permissão de acesso.';
+          status.className = 'admin-status error';
+        } finally {
+          save.disabled = false;
+          input.disabled = false;
+        }
+      });
+      card.append(image, filename, label, preview, save, status);
+      galleryList.append(card);
+    }
+    galleryLoaded = true;
+    galleryStatus.textContent = photos.length + ' máquinas encontradas.';
+  } catch (error) {
+    console.error(error);
+    galleryStatus.textContent = 'Não foi possível carregar os nomes. Confira a conexão e as regras do Firestore e tente atualizar.';
+    galleryStatus.className = 'admin-status error';
+  } finally {
+    refreshGallery.disabled = false;
+  }
+}
+
+document.querySelectorAll('[data-panel]').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('[data-panel]').forEach(tab => {
+      const active = tab === button;
+      tab.classList.toggle('active', active);
+      tab.setAttribute('aria-pressed', String(active));
+      document.getElementById(tab.dataset.panel).hidden = !active;
+    });
+    if (button.dataset.panel === 'galleryPanel' && !galleryLoaded) loadAdminGallery();
+  });
+});
+refreshGallery.addEventListener('click', loadAdminGallery);
+onAuthStateChanged(auth, user => {
+  if (user?.uid !== ADMIN_UID) {
+    galleryLoaded = false;
+    galleryList.replaceChildren();
+    galleryStatus.textContent = '';
+  }
 });

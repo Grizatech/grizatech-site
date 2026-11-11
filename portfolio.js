@@ -74,7 +74,7 @@
       const featuredLabel = index < FEATURED_CARD_COUNT ? 'DESTAQUE' : 'PORTFÓLIO';
       return `
         <button class="gallery-card portfolio-item" type="button"
-                data-lightbox="${item.image}"
+                data-client-number="${item.clientNumber}" data-lightbox="${item.image}"
                 data-caption="${title}">
           <div class="gallery-image">
             <img src="${item.image}" alt="${title}" loading="lazy">
@@ -89,7 +89,24 @@
   }
 
   discoverPortfolioItems()
-    .then(renderCards)
+    .then(async items => {
+      renderCards(items);
+      try {
+        const { loadGalleryNames } = await import('./gallery-data.js?v=20261110');
+        const names = await loadGalleryNames();
+        gallery.querySelectorAll('[data-client-number]').forEach(card => {
+          const name = names.get(card.dataset.clientNumber)?.trim();
+          if (!name) return;
+          const title = card.querySelector('.gallery-copy strong');
+          title.textContent = name;
+          title.classList.add('gallery-owner-name');
+          card.dataset.caption = name;
+          card.querySelector('img').alt = 'Setup de ' + name;
+        });
+      } catch (error) {
+        console.warn('Nomes da galeria indisponíveis.', error);
+      }
+    })
     .catch(() => {
       gallery.innerHTML = '<div class="gallery-loading" role="alert">NÃO FOI POSSÍVEL CARREGAR A GALERIA</div>';
     })

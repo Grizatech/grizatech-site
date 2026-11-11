@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#02050b">
 <meta name="robots" content="noindex,nofollow">
-<title>GrizaTech | Painel de Avaliações</title>
-<link rel="stylesheet" href="admin.css">
+<title>GrizaTech | Painel Administrativo</title>
+<link rel="stylesheet" href="admin.css?v=20261110">
 </head>
 <body>
 <div class="admin-grid-bg"></div>
@@ -14,7 +14,7 @@
   <header class="admin-header">
     <div>
       <span class="admin-eyebrow">GRIZATECH // ADMIN</span>
-      <h1>PAINEL DE <span>AVALIAÇÕES.</span></h1>
+      <h1>PAINEL <span>ADMINISTRATIVO.</span></h1>
     </div>
     <a href="index.html">← VOLTAR AO SITE</a>
   </header>
@@ -41,7 +41,12 @@
       </div>
     </div>
 
-    <div class="admin-summary">
+    <nav class="admin-tabs" aria-label="Áreas do painel">
+  <button type="button" class="active" data-panel="reviewsPanel" aria-pressed="true">Avaliações</button>
+  <button type="button" data-panel="galleryPanel" aria-pressed="false">Nomes da galeria</button>
+</nav>
+<div id="reviewsPanel">
+<div class="admin-summary">
       <article><small>PENDENTES</small><strong id="pendingCount">0</strong></article>
       <article><small>APROVADAS</small><strong id="approvedCount">0</strong></article>
       <article><small>TOTAL</small><strong id="totalCount">0</strong></article>
@@ -56,8 +61,15 @@
       <div class="admin-section-head"><div><small>PUBLICADAS</small><h2>AVALIAÇÕES APROVADAS</h2></div><span>OCULTAR OU EXCLUIR</span></div>
       <div class="admin-review-list" id="approvedReviews"><div class="admin-empty">Carregando...</div></div>
     </section>
+  </div>
+    <section id="galleryPanel" class="admin-section" hidden aria-labelledby="galleryTitle">
+      <div class="admin-section-head"><div><small>GALERIA DE CLIENTES</small><h2 id="galleryTitle">Nomes das máquinas</h2></div><button id="refreshGallery" type="button">Atualizar fotos</button></div>
+      <p class="gallery-instructions">Escolha a foto, digite o nome ou apelido do dono e salve. Deixe o campo vazio para exibir a legenda padrão.</p>
+      <p id="galleryStatus" class="admin-status" role="status" aria-live="polite"></p>
+      <div id="adminGallery" class="admin-gallery"></div>
+    </section>
   </section>
 </main>
-<script type="module" src="admin.js"></script>
+<script type="module" src="admin.js?v=20261110"></script>
 </body>
 </html>
