@@ -21,3 +21,20 @@
 .admin-machine .admin-status { font-size: .75rem; line-height: 1.5; min-height: 36px; }
 @media (max-width: 1000px) { .admin-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 620px) { .admin-gallery { grid-template-columns: 1fr; } .admin-tabs { flex-wrap: wrap; } .admin-tabs button { flex: 1; } }
+
+#servicesPanel button { padding: 10px 14px; color: #dcecf5; background: #101e30; border: 1px solid #426080; font: inherit; cursor: pointer; }
+#servicesStatus { margin: 10px 0; font-size: .83rem; }
+.service-editor-fields { min-width: 0; margin: 0; padding: 0; border: 0; }
+#serviceEditorList { display: grid; gap: 8px; }
+.service-editor-row { background: #0e1927; border: 1px solid #324a60; }
+.service-editor-row > summary { padding: 14px; cursor: pointer; overflow-wrap: anywhere; }
+.service-editor-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 14px; padding: 16px; border-top: 1px solid #324a60; }
+.service-editor-grid > label { display: grid; gap: 6px; color: #bdcddc; font-size: .85rem; }
+.service-editor-grid input:not([type="checkbox"]), .service-editor-grid textarea, .service-editor-grid select { width: 100%; min-width: 0; padding: 10px; background: #07101a; border: 1px solid #596f83; color: white; font: inherit; }
+.service-editor-grid textarea { resize: vertical; }
+.service-editor-summary, .service-editor-checks { grid-column: 1 / -1; }
+.service-editor-checks, .service-editor-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.service-editor-checks label { display: flex; align-items: center; gap: 6px; }
+.service-editor-actions { margin-top: 16px; }
+#servicesPanel button[type="submit"] { border-color: #4bc9d7; color: #9ff5ff; }
+@media(max-width:620px) { .service-editor-grid { grid-template-columns: 1fr; } }

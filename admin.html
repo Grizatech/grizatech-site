@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#02050b">
 <meta name="robots" content="noindex,nofollow">
 <title>GrizaTech | Painel Administrativo</title>
-<link rel="stylesheet" href="admin.css?v=20261110">
+<link rel="stylesheet" href="admin.css?v=catalogo1">
 </head>
 <body>
 <div class="admin-grid-bg"></div>
@@ -44,6 +44,7 @@
     <nav class="admin-tabs" aria-label="Áreas do painel">
   <button type="button" class="active" data-panel="reviewsPanel" aria-pressed="true">Avaliações</button>
   <button type="button" data-panel="galleryPanel" aria-pressed="false">Nomes da galeria</button>
+  <button type="button" data-panel="servicesPanel" aria-pressed="false">Serviços e preços</button>
 </nav>
 <div id="reviewsPanel">
 <div class="admin-summary">
@@ -68,8 +69,43 @@
       <p id="galleryStatus" class="admin-status" role="status" aria-live="polite"></p>
       <div id="adminGallery" class="admin-gallery"></div>
     </section>
+    <section id="servicesPanel" class="admin-section" hidden aria-labelledby="servicesTitle">
+      <div class="admin-section-head">
+        <h2 id="servicesTitle">Serviços e preços</h2>
+        <button id="reloadServices" type="button">Recarregar catálogo</button>
+      </div>
+      <p class="gallery-instructions">Abra um serviço para editar. A posição 1 aparece primeiro em cada lista. Salvar atualiza o catálogo público e os próximos orçamentos.</p>
+      <p id="servicesStatus" class="admin-status" role="status"></p>
+      <form id="serviceEditor" hidden>
+        <fieldset class="service-editor-fields">
+          <div id="serviceEditorList"></div>
+          <div class="service-editor-actions">
+            <button id="addService" type="button">Adicionar serviço</button>
+            <button type="submit">Salvar catálogo</button>
+          </div>
+        </fieldset>
+      </form>
+      <template id="serviceEditorRow">
+        <details class="service-editor-row">
+          <summary></summary>
+          <div class="service-editor-grid">
+            <label>Nome<input name="name" maxlength="100" required></label>
+            <label>Preço à vista (R$)<input name="price" type="number" min="0" max="99999.99" step="0.01" required></label>
+            <label>Lista<select name="group"><option value="principal">Serviços mais buscados</option><option value="outros">Outros serviços</option></select></label>
+            <label>Posição na lista<input name="position" type="number" min="1" max="60" step="1" required></label>
+            <label class="service-editor-summary">Resumo<textarea name="summary" rows="3" maxlength="1600" required></textarea></label>
+            <div class="service-editor-checks">
+              <label><input name="inPerson" type="checkbox"> Presencial</label>
+              <label><input name="remote" type="checkbox"> Remoto</label>
+              <label><input name="active" type="checkbox"> Visível no site</label>
+            </div>
+            <button type="button" name="discard" hidden>Descartar novo serviço</button>
+          </div>
+        </details>
+      </template>
+    </section>
   </section>
 </main>
-<script type="module" src="admin.js?v=20261110"></script>
+<script type="module" src="admin.js?v=catalogo1"></script>
 </body>
 </html>

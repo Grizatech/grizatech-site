@@ -1,5 +1,6 @@
 import { discoverGallery, loadGalleryNames, saveGalleryName } from './gallery-data.js?v=20261110';
 import { auth, db } from './firebase.js';
+import { initializeServiceEditor } from './admin-services.js';
 import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -261,6 +262,8 @@ async function loadAdminGallery() {
   }
 }
 
+const serviceEditor = initializeServiceEditor(() => auth.currentUser?.uid === ADMIN_UID);
+
 document.querySelectorAll('[data-panel]').forEach(button => {
   button.addEventListener('click', () => {
     document.querySelectorAll('[data-panel]').forEach(tab => {
@@ -270,6 +273,7 @@ document.querySelectorAll('[data-panel]').forEach(button => {
       document.getElementById(tab.dataset.panel).hidden = !active;
     });
     if (button.dataset.panel === 'galleryPanel' && !galleryLoaded) loadAdminGallery();
+    if (button.dataset.panel === 'servicesPanel') serviceEditor.open();
   });
 });
 refreshGallery.addEventListener('click', loadAdminGallery);
@@ -278,5 +282,8 @@ onAuthStateChanged(auth, user => {
     galleryLoaded = false;
     galleryList.replaceChildren();
     galleryStatus.textContent = '';
+    serviceEditor.reset();
+  } else if (!document.getElementById('servicesPanel').hidden) {
+    serviceEditor.open();
   }
 });

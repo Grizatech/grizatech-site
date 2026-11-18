@@ -59,5 +59,19 @@ service cloud.firestore {
         && request.resource.data.updatedAt == request.time;
       allow delete: if isAdmin();
     }
+    match /siteSettings/serviceCatalog {
+      function validCatalog() {
+        return request.resource.data.keys().hasOnly(['services', 'revision', 'updatedAt'])
+          && request.resource.data.services is list
+          && request.resource.data.services.size() <= 60
+          && request.resource.data.revision is int
+          && request.resource.data.updatedAt == request.time;
+      }
+
+      allow get: if true;
+      allow create: if isAdmin() && validCatalog() && request.resource.data.revision == 1;
+      allow update: if isAdmin() && validCatalog()
+        && request.resource.data.revision == resource.data.revision + 1;
+    }
   }
 }
